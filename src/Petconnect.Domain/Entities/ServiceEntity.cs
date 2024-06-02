@@ -12,4 +12,5 @@ public class ServiceEntity : BaseEntity {
     public ServiceCategoryEntity? ServiceCategory { get; set; }
     public Guid ServiceCategoryId { get; set; }
     public List<AnimalEntity>? ServiceFor { get; set; }
+    public List<EvaluationEntity>? Evaluations { get; set; }
 }

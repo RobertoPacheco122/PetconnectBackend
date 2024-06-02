@@ -7,7 +7,7 @@ public class UserEntity : BaseEntity {
     public DateOnly Birthdate { get; set; }
 
     public ServiceProviderEntity? ServiceProvider { get; set; }
-    public Guid ServiceProviderId { get; set; }
+    public Guid? ServiceProviderId { get; set; }
     public CommonUserEntity? CommonUser { get; set; }
-    public Guid CommonUserId { get; set; }
+    public Guid? CommonUserId { get; set; }
 }
