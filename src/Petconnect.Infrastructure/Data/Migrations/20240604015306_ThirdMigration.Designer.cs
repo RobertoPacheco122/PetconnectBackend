@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using Petconnect.Infrastructure.Data.Context;
@@ -11,9 +12,11 @@ using Petconnect.Infrastructure.Data.Context;
 namespace Petconnect.Infrastructure.Data.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20240604015306_ThirdMigration")]
+    partial class ThirdMigration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -24,13 +27,13 @@ namespace Petconnect.Infrastructure.Data.Migrations
 
             modelBuilder.Entity("AnimalEntityServiceEntity", b =>
                 {
-                    b.Property<Guid>("AnimalsId")
+                    b.Property<Guid>("ServiceForId")
                         .HasColumnType("uuid");
 
                     b.Property<Guid>("ServicesId")
                         .HasColumnType("uuid");
 
-                    b.HasKey("AnimalsId", "ServicesId");
+                    b.HasKey("ServiceForId", "ServicesId");
 
                     b.HasIndex("ServicesId");
 
@@ -328,10 +331,6 @@ namespace Petconnect.Infrastructure.Data.Migrations
                     b.Property<bool>("IsVisible")
                         .HasColumnType("boolean");
 
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("text");
-
                     b.Property<Guid>("ServiceCategoryId")
                         .HasColumnType("uuid");
 
@@ -514,7 +513,7 @@ namespace Petconnect.Infrastructure.Data.Migrations
                 {
                     b.HasOne("Petconnect.Domain.Entities.AnimalEntity", null)
                         .WithMany()
-                        .HasForeignKey("AnimalsId")
+                        .HasForeignKey("ServiceForId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

@@ -47,6 +47,7 @@ public class BaseRepository<T> : IRepository<T> where T : BaseEntity {
         try {
             entity.Id = Guid.NewGuid();
             entity.CreatedAt = DateTime.UtcNow;
+            entity.IsDeleted = false;
 
             _dataset.Add(entity);
             await _context.SaveChangesAsync();
@@ -70,13 +71,12 @@ public class BaseRepository<T> : IRepository<T> where T : BaseEntity {
         }
     }
 
-    public async Task<T> UpdateAsync(T entity, Guid userId) {
+    public async Task<T> UpdateAsync(T entity) {
         try {
             var entityInDatabase = await _dataset.FindAsync(entity.Id);
             if (entityInDatabase == null) return null;
 
             entity.UpdatedAt = DateTime.UtcNow;
-            entity.UserWhoLastUpdatedId = userId;
             entity.CreatedAt = entityInDatabase.CreatedAt;
 
             _context.Entry(entityInDatabase)

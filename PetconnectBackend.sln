@@ -7,15 +7,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{22042B6E-239
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{1C50CCFB-85DB-4149-822E-98EE57D0DB04}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Petconnect.API", "src\Petconnect.API\Petconnect.API.csproj", "{F169DCE4-5EE4-4CAB-84E7-293A20CCAB91}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Petconnect.API", "src\Petconnect.API\Petconnect.API.csproj", "{F169DCE4-5EE4-4CAB-84E7-293A20CCAB91}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Petconnect.Domain", "src\Petconnect.Domain\Petconnect.Domain.csproj", "{4E084158-0081-49E9-8E49-EAB763B8B713}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Petconnect.Domain", "src\Petconnect.Domain\Petconnect.Domain.csproj", "{4E084158-0081-49E9-8E49-EAB763B8B713}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Petconnect.Application", "src\Petconnect.Application\Petconnect.Application.csproj", "{80C1F1CC-E9E0-4816-B482-1D8F3E629686}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Petconnect.Application", "src\Petconnect.Application\Petconnect.Application.csproj", "{80C1F1CC-E9E0-4816-B482-1D8F3E629686}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Petconnect.Infrastructure", "src\Petconnect.Infrastructure\Petconnect.Infrastructure.csproj", "{1455FB8C-69B3-45BC-B5B0-F1EA0B8C42C8}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Petconnect.CrossCutting", "src\Petconnect.CrossCutting\Petconnect.CrossCutting.csproj", "{605A4506-6646-49C0-B97C-A21FEB5349CC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Petconnect.Infrastructure", "src\Petconnect.Infrastructure\Petconnect.Infrastructure.csproj", "{1455FB8C-69B3-45BC-B5B0-F1EA0B8C42C8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,10 +37,6 @@ Global
 		{1455FB8C-69B3-45BC-B5B0-F1EA0B8C42C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1455FB8C-69B3-45BC-B5B0-F1EA0B8C42C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1455FB8C-69B3-45BC-B5B0-F1EA0B8C42C8}.Release|Any CPU.Build.0 = Release|Any CPU
-		{605A4506-6646-49C0-B97C-A21FEB5349CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{605A4506-6646-49C0-B97C-A21FEB5349CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{605A4506-6646-49C0-B97C-A21FEB5349CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{605A4506-6646-49C0-B97C-A21FEB5349CC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -52,7 +46,6 @@ Global
 		{4E084158-0081-49E9-8E49-EAB763B8B713} = {22042B6E-2396-4609-BF90-7A1CED440BFA}
 		{80C1F1CC-E9E0-4816-B482-1D8F3E629686} = {22042B6E-2396-4609-BF90-7A1CED440BFA}
 		{1455FB8C-69B3-45BC-B5B0-F1EA0B8C42C8} = {22042B6E-2396-4609-BF90-7A1CED440BFA}
-		{605A4506-6646-49C0-B97C-A21FEB5349CC} = {22042B6E-2396-4609-BF90-7A1CED440BFA}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5C156A52-A046-429B-AA70-986EBCE6198E}

@@ -1,3 +1,4 @@
+using Petconnect.Application.DependencyInjection;
 using Petconnect.Infrastructure.CrossCutting.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);

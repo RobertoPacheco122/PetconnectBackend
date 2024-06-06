@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Petconnect.Infrastructure\Petconnect.Infrastructure.csproj" />
+  </ItemGroup>
+
 </Project>

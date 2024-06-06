@@ -15,11 +15,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\Petconnect.Application\Petconnect.Application.csproj" />
+    <ProjectReference Include="..\Petconnect.Domain\Petconnect.Domain.csproj" />
     <ProjectReference Include="..\Petconnect.Infrastructure\Petconnect.Infrastructure.csproj" />
   </ItemGroup>
 

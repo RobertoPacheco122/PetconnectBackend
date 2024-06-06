@@ -7,5 +7,5 @@ public interface IRepository<T> where T : BaseEntity {
     Task<List<T>> GetAllAsync();
     Task<T> InsertAsync(T entity);
     Task<T> SelectAsync(Guid id);
-    Task<T> UpdateAsync(T entity, Guid userId);
+    Task<T> UpdateAsync(T entity);
 }
