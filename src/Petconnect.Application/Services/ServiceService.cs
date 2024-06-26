@@ -5,8 +5,11 @@ using Petconnect.Domain.Interfaces.Services;
 namespace Petconnect.Application.Services;
 public class ServiceService : IServiceService {
     private readonly IRepository<ServiceEntity> _serviceRepository;
-    public ServiceService(IRepository<ServiceEntity> serviceRepository) {
+    private readonly IServiceRepository _specificServiceRepository;
+
+    public ServiceService(IRepository<ServiceEntity> serviceRepository, IServiceRepository specificServiceRepository) {
         _serviceRepository = serviceRepository;
+        _specificServiceRepository = specificServiceRepository;
     }
 
     public async Task<bool> Delete(Guid id) {
@@ -22,13 +25,13 @@ public class ServiceService : IServiceService {
     }
 
     public Task<List<ServiceEntity>> GetAll() {
-        var queryResult = _serviceRepository.GetAllAsync();
+        var queryResult = _specificServiceRepository.GetAllRelatedDetails();
 
         return queryResult;
     }
 
     public Task<ServiceEntity> GetSingle(Guid id) {
-        var queryResult = _serviceRepository.SelectAsync(id);
+        var queryResult = _specificServiceRepository.GetAllRelatedDetailsById(id);
 
         return queryResult;
     }

@@ -25,7 +25,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Data\Implementations\" />
     <Folder Include="Data\Migrations\" />
   </ItemGroup>
 

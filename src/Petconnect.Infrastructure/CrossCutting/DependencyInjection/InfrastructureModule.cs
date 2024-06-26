@@ -2,6 +2,7 @@
 using Microsoft.Extensions.DependencyInjection;
 using Petconnect.Domain.Interfaces.Repositories;
 using Petconnect.Infrastructure.Data.Context;
+using Petconnect.Infrastructure.Data.Implementations;
 using Petconnect.Infrastructure.Data.Repositories;
 
 namespace Petconnect.Infrastructure.CrossCutting.DependencyInjection;
@@ -15,6 +16,7 @@ public static class InfrastructureModule {
     private static IServiceCollection AddRepositories(this IServiceCollection services) {
         var connectionString = "Host=localhost;Port=5433;Database=petconnect;Username=roberto;Password=petconnect2024";
         services.AddScoped(typeof(IRepository<>), typeof(BaseRepository<>));
+        services.AddScoped<IServiceRepository, ServiceImplementation>();
 
         services.AddDbContext<DataContext>(
             options => options.UseNpgsql(connectionString)

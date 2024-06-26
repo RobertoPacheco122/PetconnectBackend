@@ -1,4 +1,6 @@
-﻿namespace Petconnect.Domain.Entities;
+﻿using System.Text.Json.Serialization;
+
+namespace Petconnect.Domain.Entities;
 
 public class ServiceEntity : BaseEntity {
     public string Name { get; set; } = string.Empty;
