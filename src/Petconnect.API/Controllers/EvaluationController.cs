@@ -18,6 +18,18 @@ public class EvaluationController : ControllerBase {
         }
     }
 
+    [HttpGet("serviceProvider/{id}")]
+    public async Task<ActionResult<List<EvaluationEntity>>> GetAllByServiceProvider(Guid id, [FromServices] IEvaluationService evaluationService) {
+        try {
+            var response = await evaluationService.GetAllByServiceProvider(id);
+
+            return Ok(response);
+        }
+        catch (Exception ex) {
+            return BadRequest(ex.Message);
+        }
+    }
+
     [HttpGet("{id}")]
     public async Task<ActionResult<EvaluationEntity>> GetSingle(Guid id, [FromServices] IEvaluationService evaluationService) {
         try {

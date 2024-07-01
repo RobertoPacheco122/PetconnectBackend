@@ -18,6 +18,7 @@ namespace Petconnect.Infrastructure.Data.Implementations {
                     .Include(service => service.Animals)
                     .Include(service => service.ServiceCategory)
                     .Include(service => service.Evaluations)
+                        .ThenInclude(evaluation => evaluation.UserWhoRequested)
                     .Include(service => service.ServiceProvider)
                         .ThenInclude(provider => provider.Addresses)
                     .ToListAsync();
@@ -35,6 +36,7 @@ namespace Petconnect.Infrastructure.Data.Implementations {
                     .Include(service => service.Animals)
                     .Include(service => service.ServiceCategory)
                     .Include(service => service.Evaluations)
+                        .ThenInclude(evaluation => evaluation.UserWhoRequested)
                     .Include(service => service.ServiceProvider)
                         .ThenInclude(provider => provider.Addresses)
                     .FirstOrDefaultAsync(service => service.Id == id);

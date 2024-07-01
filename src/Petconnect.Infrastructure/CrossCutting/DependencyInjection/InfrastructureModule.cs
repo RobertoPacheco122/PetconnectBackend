@@ -14,9 +14,10 @@ public static class InfrastructureModule {
     }
 
     private static IServiceCollection AddRepositories(this IServiceCollection services) {
-        var connectionString = "Host=localhost;Port=5433;Database=petconnect;Username=roberto;Password=petconnect2024";
+        var connectionString = "Host=localhost;Port=5433;Database=petconnect;Username=roberto;Password=petconnect2024;Include Error Detail=true";
         services.AddScoped(typeof(IRepository<>), typeof(BaseRepository<>));
         services.AddScoped<IServiceRepository, ServiceImplementation>();
+        services.AddScoped<IEvaluationRepository, EvaluationImplementation>();
 
         services.AddDbContext<DataContext>(
             options => options.UseNpgsql(connectionString)

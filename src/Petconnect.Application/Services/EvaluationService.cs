@@ -5,8 +5,11 @@ using Petconnect.Domain.Interfaces.Services;
 namespace Petconnect.Application.Services;
 public class EvaluationService : IEvaluationService {
     private readonly IRepository<EvaluationEntity> _evaluationRepository;
-    public EvaluationService(IRepository<EvaluationEntity> evaluationRepository) {
+    private readonly IEvaluationRepository _specificRepository;
+
+    public EvaluationService(IRepository<EvaluationEntity> evaluationRepository, IEvaluationRepository specificRepository) {
         _evaluationRepository = evaluationRepository;
+        _specificRepository = specificRepository;
     }
 
     public async Task<bool> Delete(Guid id) {
@@ -23,6 +26,12 @@ public class EvaluationService : IEvaluationService {
 
     public Task<List<EvaluationEntity>> GetAll() {
         var queryResult = _evaluationRepository.GetAllAsync();
+
+        return queryResult;
+    }
+
+    public Task<List<EvaluationEntity>> GetAllByServiceProvider(Guid id) {
+        var queryResult = _specificRepository.GetAllByServiceProvider(id);
 
         return queryResult;
     }
